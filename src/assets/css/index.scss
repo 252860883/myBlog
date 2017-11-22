@@ -80,7 +80,13 @@
        z-index: -10;
        overflow: hidden;
        border: 1px #000 solid;
-       transition: all 1s;
+       animation: canfade .5s linear;
+    //    transform: scale(1.5);
        -webkit-backface-visibility: none;
+    }
+
+    @keyframes canfade {
+        0% {opacity: 0;}
+        100%{opacity: 1;}
     }
 }

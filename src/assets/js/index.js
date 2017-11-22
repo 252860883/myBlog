@@ -5,34 +5,52 @@ canvas.height = canvas.clientHeight * 2;
 var ctx = canvas.getContext('2d');
 var nWidth = canvas.width,
     nHeight = canvas.height,
-    n = 20;
-
+    n = (nWidth+nHeight)*0.005;//显示的彩球数量
 var colorList = ["#FFC0CB", "	#9370DB", "#4169E1", "#98FB98", "#EEE8AA", "#FFA07A"]
-
-window.onload=function(){
+var ball = [];
+window.onload = function () {
     draw();
-}                         
+    move();
+}
+//绘制小球操作
 function draw() {
-    canvas.style.display='none';
-    ctx.clearRect(0,0,nWidth,nHeight);
+    ctx.clearRect(0, 0, nWidth, nHeight);
     for (var i = 0; i < n; i++) {
-        var x = Math.random() * nWidth,
-            y = Math.random() * nHeight,
-            r = Math.random() * nWidth*0.08 + 100;
-        var date = new Date().getTime();
-        var gradient = gradient = ctx.createLinearGradient(0, y - r, 0, y + r);
-        gradient.addColorStop(0, colorList[Math.floor(Math.random() * colorList.length)]);
-        gradient.addColorStop(1, colorList[Math.floor(Math.random() * colorList.length)]);
-        ctx.beginPath();
-        ctx.fillStyle = gradient;
-        ctx.arc(x, y, r, 0, Math.PI * 2, true);
-        ctx.fill();
-        ctx.closePath();
+        ball[i] = {
+            'x': Math.random() * nWidth,
+            'y': Math.random() * nHeight,
+            'r': Math.random()*180 +100,                                                                  
+            'startColor': colorList[Math.floor(Math.random() * colorList.length)],
+            'endColor': colorList[Math.floor(Math.random() * colorList.length)]
+        }
+        drawBall(ball[i]);
     }
-    canvas.style.display='block';
+}
+
+function drawBall(ball) {
+    var gradient = ctx.createLinearGradient(0, ball.y - ball.r, 0, ball.y + ball.r);
+    gradient.addColorStop(0, ball.startColor);
+    gradient.addColorStop(1, ball.endColor);
+    ctx.beginPath();
+    ctx.fillStyle = gradient;
+    ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2, true);
+    ctx.fill();
+    ctx.closePath();
+}
+
+var move = function () {
+    ctx.clearRect(0, 0, nWidth, nHeight);
+    for(var i=0;i<n;i++){
+            ball[i]['y']+=Math.random()*2-1;
+            ball[i]['x']+=Math.random()*2-1;
+        drawBall(ball[i]);
+    }
+    requestAnimationFrame(move);
+    // setInterval(move,100);
 }
 
 document.body.addEventListener('click', draw);
+
 
 
 
