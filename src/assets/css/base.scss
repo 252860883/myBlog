@@ -1,0 +1,461 @@
+
+//定义字体大小
+
+$font12:12px !default;
+$font14:14px !default;
+$font16:16px !default;
+$font18:18px !default;
+$font20:20px !default;
+$font36:36px !default;
+$px15:15px !default;
+$px30:30px !default;
+
+$colorwhite:#fff !default;
+$colorText:#202830 !default;
+$colorWeak:#5A6978 !default;
+$colorTheme:#ffbb00 !default;
+$colorHelper:#758392 !default;
+
+$yahei:PingFangSC-Regular,"Helvetica Neue",PingFangSC-Light,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none outside;
+}
+
+:active,
+:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    font: $font14 $yahei;
+    line-height: 1.6;
+    color: $colorText;
+}
+
+button,
+input,
+select,
+textarea {
+    line-height: 1;
+}
+
+a {
+    color: $colorText;
+    &:hover,
+    &:focus {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+
+/* Custom radio-checkbox */
+
+.radio,
+.checkbox {
+    width: 18px;
+    height: 18px;
+    /* ie 6 */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+/* radio */
+
+.radio {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../slice/un-radio.png) no-repeat;
+    margin: 0;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.radio-checked {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../slice/radio.png) no-repeat;
+    background-position: 0;
+}
+
+
+/* checkbox */
+
+.checkbox {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../slice/un-check.png) no-repeat;
+    margin: 0;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.checkbox-checked {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../slice/check.png) no-repeat;
+    background-position: 0;
+}
+
+.rc-hidden {
+    position: absolute;
+    left: -999em
+}
+
+%vm {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.icon {
+    @extend %vm;
+}
+
+// 头部样式
+header{
+    min-width: 1200px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    .img-box{
+        background: #aeadb3;
+        img{
+            width: 100%;
+        }
+    }
+    .headnav{
+        z-index: 9999;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        .navcon{    
+            max-width: 1000px;
+            min-width: 1000px;
+            height: 70px;
+            padding: 19px;
+            margin: 0 auto;
+            // a:nth-child(1){
+            //     float: left;
+            // }
+            a:nth-child(2){
+                display: inline-block;
+            }
+            a{
+                float: left;
+                .logo{
+                    
+                    width: 120px;
+                    height: 25px;
+                    cursor: pointer;
+                    margin-right: 40px;
+                }
+                
+            }
+            .we{
+                display: inline-block;
+                cursor: default;
+                .wechat-enter{
+                    display: flex;
+                    width: 140px;;
+                    height: 25px;
+                    background: #fff;
+                    border: 1px solid #2985dd;
+                    border-radius: 3px;
+                    .entry{
+                        width: 138px;
+                        height: 25px;
+                        .service{
+                            width: 30px;
+                            height: 23px;
+                            background: #2985dd;
+                            display: block;
+                            position: relative;
+                            float: left;
+                            img{
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                margin-top: -9px;
+                                margin-left: -10px;
+                                height: 16px;
+                            }
+                        }
+                        
+                        .servicetitle{
+                            width: 108px;
+                            text-align: center;
+                            font-size: 12px;
+                            color: #118af1;
+                            line-height: 23px;
+                            height: 23px;
+                            display: block;
+                            float: right;
+                        }
+                    }
+                }
+            }
+            .nav{
+                width: 550px;
+                text-align: right;
+                float: right;
+                a{
+                    display: inline-block;
+                    color: #fff;
+                    font-size: 14px;
+                    line-height: 30px;
+                    text-align: center;
+                }
+                .act{
+                    color: #febc08;
+                }
+                .title{
+                    margin-right: 32px;
+                }
+                .login{
+                    width: 60px;
+                    height: 30px;
+                    border: 1px solid #fff;
+                    color: #fff;
+                    line-height: 28px;
+                    margin-left: 60px;
+                    margin-right: 10px;
+                }
+                .join{
+                    width: 60px;
+                    height: 30px;
+                    color: #fff;
+                    background: #fcc107;
+                }
+            }
+            .login-nav{
+                float: right;
+                a{
+                    display: inline-block;
+                    color: #fff;
+                    font-size: 14px;
+                    line-height: 30px;
+                    text-align: center;
+                }
+                .act{
+                    color: #febc08;
+                }
+                .title{
+                    margin-right: 32px;
+                }
+                .login{
+                    width: 60px;
+                    height: 30px;
+                    border: 1px solid #fff;
+                    color: #fff;
+                    line-height: 28px;
+                    margin-left: 50px;
+                    margin-right: 20px;
+                }
+                .join{
+                    width: 60px;
+                    height: 30px;
+                    color: #fff;
+                    background: #fcc107;
+                }
+                .company-name{
+                    margin-left: 30px;
+                    margin-right: 50px;
+                    position: relative;
+                    .space{
+                        width: 45px;
+                        height: 20px;
+                        position: absolute;
+                        right: -45px;
+                        top: -10px;
+                        font-size: 12px;
+                        color: #ff7e00;
+                        background: url(../img/work-space.png) no-repeat;
+                        line-height: 18px;
+                        padding-left: 3px;
+                        background-size: cover;
+                    }
+                }
+                .quit{
+                    height: 30px;
+                    color: #fff;
+                }
+            }
+        }
+        
+    }
+    .big-title{
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        z-index: 56;
+        position: absolute;
+        left: 0;
+        top: 36%;
+        // margin-top: 127px;
+        margin: 0 auto;
+        h1{
+            font-size: 50px;
+        }
+        .bottom-line{
+            display: block;
+            width: 90px;
+            height: 2px;
+            background: #fff;
+            position: relative;
+            left: 2px;
+            top: 0;
+            margin: 0 auto;
+        }
+        
+    }
+   
+}
+
+// 底部样式
+.footer {
+    clear: both;
+    background: #282828;
+    height: 350px;
+
+    .company-info {
+        width: 1000px;
+        text-align: center;
+        margin: 0 auto;
+        height: 150px;
+        .other_info_wrap {
+            width: 1000px;
+            margin: 80px auto 0;
+            &:after {
+                display: block;
+                clear: both;
+                overflow: hidden;
+                height: 0;
+                content: "";
+                width: 100%;
+            }
+            .tels {
+                float: right;
+                width: 310px;;
+                color: $colorHelper;
+                .wechat{
+                    float:left;
+                    img {
+                        display: block;
+                        width: 130px;
+                        height: 130px;
+                        margin: 0 auto;
+                    }    
+                }
+                .contact-us{
+                    float:right;
+                    width: 160px;
+                    h2{
+                        font-size: 14px;
+                        color: #febc08;
+                        text-align: left;
+                        // padding-left: 4px;
+                        margin-bottom: 20px;
+                    }
+                    span{
+                        width: 160px;
+                        display: inline-block;
+                        color: #798391;
+                        text-align: left;
+                        font-size: 12px;
+                    }
+                    span:nth-child(3){
+                        margin-top: 10px;
+                        text-align: left;
+                    }
+                }
+            }
+            .other_info {
+                float: left;
+                width: 660px;
+                height: 160px;
+                padding-top: 20px;
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    text-align: left;
+                    li {
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-right: 100px;
+                        .foot-title {
+                            font-size: 14px;
+                            color: #febc08;
+                            font-weight: 400;
+                            margin-bottom: 20px;
+                            margin-top: 0;
+                        }
+                        p {
+                            margin: 0;
+                            text-align: left;
+                            a {
+                                display: block;
+                                font-size: 12px;
+                                color: #798391;
+                                margin-top: 10px;
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bottom-right{
+        width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        .copyright {
+            width: 1000px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(168, 176, 202, .4);
+            height: 62px;
+            line-height: 62px;
+            text-align: center;
+            font-size: $font12;
+            color: #bbc2cb;
+            margin-top: 30px;
+            p {
+                color: #bbc2cb;
+                margin-bottom: 0;
+                cursor: pointer;
+                a {
+                    opacity: .4;
+                    color: #bbc2cb;
+                }
+                a:nth-child(1){
+                    margin-right: 30px;
+                }
+            }
+            .pull-left{
+                opacity: .4;
+            }
+        }
+        img{
+            margin-top: -4px;
+        }
+    }
+    
+}
