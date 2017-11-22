@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     postcss=require('gulp-postcss')//引入postcss
     px2rem=require('postcss-px2rem');//自动化 px -> rem，实现响应式布局
 </pre>
+更多详细配置在 gulpfile.js文件下查看
 
 ### 链接地址
 www.duhonghui.top/main/
