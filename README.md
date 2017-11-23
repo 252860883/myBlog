@@ -17,5 +17,5 @@ var gulp = require('gulp'),
 更多详细配置在 gulpfile.js文件下查看
 
 ### 链接地址
-www.duhonghui.top/main/
+www.duhonghui.top
 
