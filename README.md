@@ -24,7 +24,7 @@ requestAnimationFrame实现canvas不断重绘生成抖动的动画效果
 <pre>
 var move = function () {
     ctx.clearRect(0, 0, nWidth, nHeight);
-    for(var i=0;i&ampn;i++){
+    for(var i=0;i&ltn;i++){
             ball[i]['y']+=Math.random()*2-1;
             ball[i]['x']+=Math.random()*2-1;
         drawBall(ball[i]);
