@@ -17,6 +17,13 @@ var gulp = require('gulp'),
 更多详细配置在 gulpfile.js文件下查看
 
 ### 技术点
+#### 给网站加个小图标~
+在头部添加link标签
+<pre>
+<!-- 添加图标 -->
+<link rel="icon" href="assets/img/logo.png" type="image/x-icon" />
+</pre>
+
 #### media query + rem实现移动端适配
 gulp引入postcss的px2rem实现自动转换rem单位，编写media query修改不同宽度的根元素的 font-size的值
 #### requestAnimationFrame 实现canvas不断重绘
