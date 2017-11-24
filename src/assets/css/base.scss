@@ -18,6 +18,10 @@ $colorHelper:#758392 !default;
 
 $yahei:PingFangSC-Regular,"Helvetica Neue",PingFangSC-Light,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 
+@font-face{
+    font-family: 'Berlin Sans FB';
+    src:'../font/font.TTF';
+}
 
 * {
     margin: 0;
@@ -36,7 +40,7 @@ ol {
 }
 
 body {
-    font: $font14 $yahei;
+    font: $font14 'Berlin Sans FB';
     line-height: 1.6;
     color: $colorText;
 }
