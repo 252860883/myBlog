@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="assets/css/index.css">
     <!-- 添加图标 -->
     <link rel="icon" href="assets/img/logo.png" type="image/x-icon" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 
 <body>
     <div class="main">
-        <div class="content">
+        <div class="content person">
             <div class="photo">
                 <img src="assets/img/photo.jpg">
             </div>
@@ -22,14 +23,45 @@
             <hr>
             <span class="sec">Programmer & Desinger. Be a intersted man</span>
             <nav>
-                <span><a href="">BLOG</a></span>
+                <span>
+                    <a href="javascript:void(0)" id="demo">DEMO</a>
+                </span>
                 <span class="mar">|</span>
-                <span><a href="https://github.com/252860883">GITHUB</a></span>
+                <span>
+                    <a href="https://github.com/252860883">GITHUB</a>
+                </span>
                 <span class="mar">|</span>
-                <span><a href="https://weibo.com/2805712545/profile">WEIBO</a> </span>
+                <span>
+                    <a href="https://weibo.com/2805712545/profile">WEIBO</a>
+                </span>
             </nav>
         </div>
-            <canvas id="bg"></canvas>
+        <div class="content demo" >
+
+            <h3>项目汇总</h3>
+            <ul>
+                <li>
+                    <a href="http://www.duhonghui.top/artqrcode">艺术二维码生成器</a>
+                </li>
+                <li>
+                    <a href="http://www.duhonghui.top/chessgame">H5 五子棋大战</a>
+                </li>
+                <li>
+                    <a href=""> VUE全家桶实现移动端图片互动网站</a>
+                </li>
+                <li>
+                    <a href=""> 本地笔记本系统</a>
+                </li>
+                <li>
+                    <a href="">CANVAS实现绚烂时钟效果</a>
+                </li>
+                <li>
+                    <a href="">程序员养成计划</a>
+                </li>
+            </ul>
+            <div id="return">返回</div>
+        </div>
+        <canvas id="bg"></canvas>
     </div>
 </body>
 <script src="assets/js/all.js"></script>

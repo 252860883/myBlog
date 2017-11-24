@@ -1,5 +1,5 @@
 
-var canvas = document.getElementById('bg');
+var canvas = $('#bg')[0];
 canvas.width = canvas.clientWidth * 2;
 canvas.height = canvas.clientHeight * 2;
 var ctx = canvas.getContext('2d');
@@ -13,7 +13,7 @@ window.onload = function () {
     move();
 }
 
-//绘制小球操作
+//初次定义小球
 function draw() {
     ctx.clearRect(0, 0, nWidth, nHeight);
     for (var i = 0; i < n; i++) {
@@ -28,6 +28,7 @@ function draw() {
     }
 }
 
+//绘制小球
 function drawBall(ball) {
     var gradient = ctx.createLinearGradient(0, ball.y - ball.r, 0, ball.y + ball.r);
     gradient.addColorStop(0, ball.startColor);
@@ -48,7 +49,6 @@ var move = function () {
         drawBall(ball[i]);
     }
     requestAnimationFrame(move);
-    // setInterval(move,100);
 }
 
 /**
@@ -56,14 +56,32 @@ var move = function () {
  * 修复ios safari 下的click bug
  */
 if (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
-    console.log('okmobile')
-    document.body.addEventListener('touchstart', draw);
+    $('body').on('touchstart',draw);
+    $('#demo').on('touchstart',demoClick);
+    $('#return').on('touchstart',back);
 }
 else {
-    /*window.location.href="你的电脑版地址";    */
-    console.log('okpc')
-    document.body.addEventListener('click', draw);
+    $('body').on('click', draw);
+    $('#demo').on('click',demoClick);
+    $('#return').on('click',back);    
 }
+
+//点击demo按钮
+function demoClick(){
+    // console.log('ok')
+    $('.person').fadeOut(500);
+    $('.demo').fadeIn(500);
+    // $('.demo').slideDown();
+}
+
+//点击demo 的返回
+
+function back(){
+    $('.demo').fadeOut(500);
+    $('.person').fadeIn(500);
+}
+
+
 
 
 
