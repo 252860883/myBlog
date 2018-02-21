@@ -1,6 +1,6 @@
 ## gulp自动化构建 个人主页
 
-### 引入依赖
+### 引入依赖 
 <pre>
 var gulp = require('gulp'),
     scss = require('gulp-sass'),//scss->css
